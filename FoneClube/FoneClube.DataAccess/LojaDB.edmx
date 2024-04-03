@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LojaDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="StateProvinceId" Type="int" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Address1" Type="nvarchar(max)" />
+          <Property Name="Address2" Type="nvarchar(max)" />
+          <Property Name="ZipPostalCode" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="FaxNumber" Type="nvarchar(max)" />
+          <Property Name="CustomAttributes" Type="nvarchar(max)" />
+          <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Email" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EmailToRevalidate" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AdminComment" Type="nvarchar(max)" />
+          <Property Name="IsTaxExempt" Type="bit" Nullable="false" />
+          <Property Name="AffiliateId" Type="int" Nullable="false" />
+          <Property Name="VendorId" Type="int" Nullable="false" />
+          <Property Name="HasShoppingCartItems" Type="bit" Nullable="false" />
+          <Property Name="RequireReLogin" Type="bit" Nullable="false" />
+          <Property Name="FailedLoginAttempts" Type="int" Nullable="false" />
+          <Property Name="CannotLoginUntilDateUtc" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="IsSystemAccount" Type="bit" Nullable="false" />
+          <Property Name="SystemName" Type="nvarchar" MaxLength="400" />
+          <Property Name="LastIpAddress" Type="nvarchar(max)" />
+          <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDateUtc" Type="datetime" />
+          <Property Name="LastActivityDateUtc" Type="datetime" Nullable="false" />
+          <Property Name="RegisteredInStoreId" Type="int" Nullable="false" />
+          <Property Name="BillingAddress_Id" Type="int" />
+          <Property Name="ShippingAddress_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer_CustomerRole_Mapping">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+            <PropertyRef Name="CustomerRole_Id" />
+          </Key>
+          <Property Name="Customer_Id" Type="int" Nullable="false" />
+          <Property Name="CustomerRole_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="PasswordFormatId" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar(max)" />
+          <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenericAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityId" Type="int" Nullable="false" />
+          <Property Name="KeyGroup" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Customer_BillingAddress">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="BillingAddress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Customer_CustomerRoles_Source">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customer_CustomerRole_Mapping" Type="Self.Customer_CustomerRole_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer_CustomerRole_Mapping">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Customer_ShippingAddress">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="ShippingAddress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerPassword_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerPassword" Type="Self.CustomerPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerPassword">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LojaDBStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_CustomerRole_Mapping" EntityType="Self.Customer_CustomerRole_Mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerPassword" EntityType="Self.CustomerPassword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenericAttribute" EntityType="Self.GenericAttribute" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Customer_BillingAddress" Association="Self.Customer_BillingAddress">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="Customer_CustomerRoles_Source" Association="Self.Customer_CustomerRoles_Source">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_CustomerRole_Mapping" EntitySet="Customer_CustomerRole_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="Customer_ShippingAddress" Association="Self.Customer_ShippingAddress">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerPassword_Customer" Association="Self.CustomerPassword_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerPassword" EntitySet="CustomerPassword" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LojaDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="StateProvinceId" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZipPostalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomAttributes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="Self.Customer_BillingAddress" FromRole="Address" ToRole="Customer" />
+          <NavigationProperty Name="Customer1" Relationship="Self.Customer_ShippingAddress" FromRole="Address" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGuid" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EmailToRevalidate" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AdminComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsTaxExempt" Type="Boolean" Nullable="false" />
+          <Property Name="AffiliateId" Type="Int32" Nullable="false" />
+          <Property Name="VendorId" Type="Int32" Nullable="false" />
+          <Property Name="HasShoppingCartItems" Type="Boolean" Nullable="false" />
+          <Property Name="RequireReLogin" Type="Boolean" Nullable="false" />
+          <Property Name="FailedLoginAttempts" Type="Int32" Nullable="false" />
+          <Property Name="CannotLoginUntilDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsSystemAccount" Type="Boolean" Nullable="false" />
+          <Property Name="SystemName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="LastIpAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LastActivityDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RegisteredInStoreId" Type="Int32" Nullable="false" />
+          <Property Name="BillingAddress_Id" Type="Int32" />
+          <Property Name="ShippingAddress_Id" Type="Int32" />
+          <NavigationProperty Name="Address" Relationship="Self.Customer_BillingAddress" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="Address1" Relationship="Self.Customer_ShippingAddress" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="CustomerPassword" Relationship="LojaDB.CustomerPassword_Customer" FromRole="Customer" ToRole="CustomerPassword" />
+          <NavigationProperty Name="Customer_CustomerRole_Mapping" Relationship="LojaDB.Customer_CustomerRoles_Source" FromRole="Customer" ToRole="Customer_CustomerRole_Mapping" />
+        </EntityType>
+        <EntityType Name="GenericAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityId" Type="Int32" Nullable="false" />
+          <Property Name="KeyGroup" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="Customer_BillingAddress">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="BillingAddress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Customer_ShippingAddress">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="ShippingAddress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LojaDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="GenericAttribute" EntityType="Self.GenericAttribute" />
+          <AssociationSet Name="Customer_BillingAddress" Association="Self.Customer_BillingAddress">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="Customer_ShippingAddress" Association="Self.Customer_ShippingAddress">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <EntitySet Name="CustomerPassword" EntityType="LojaDB.CustomerPassword" />
+          <AssociationSet Name="CustomerPassword_Customer" Association="LojaDB.CustomerPassword_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerPassword" EntitySet="CustomerPassword" />
+          </AssociationSet>
+          <EntitySet Name="Customer_CustomerRole_Mapping" EntityType="LojaDB.Customer_CustomerRole_Mapping" />
+          <AssociationSet Name="Customer_CustomerRoles_Source" Association="LojaDB.Customer_CustomerRoles_Source">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_CustomerRole_Mapping" EntitySet="Customer_CustomerRole_Mapping" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CustomerPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordFormatId" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="LojaDB.CustomerPassword_Customer" FromRole="CustomerPassword" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CustomerPassword_Customer">
+          <End Type="LojaDB.Customer" Role="Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LojaDB.CustomerPassword" Role="CustomerPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerPassword">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Customer_CustomerRole_Mapping">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+            <PropertyRef Name="CustomerRole_Id" />
+          </Key>
+          <Property Name="Customer_Id" Type="Int32" Nullable="false" />
+          <Property Name="CustomerRole_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="LojaDB.Customer_CustomerRoles_Source" FromRole="Customer_CustomerRole_Mapping" ToRole="Customer" />
+        </EntityType>
+        <Association Name="Customer_CustomerRoles_Source">
+          <End Type="LojaDB.Customer" Role="Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LojaDB.Customer_CustomerRole_Mapping" Role="Customer_CustomerRole_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer_CustomerRole_Mapping">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LojaDBStoreContainer" CdmEntityContainer="LojaDBEntities">
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="LojaDB.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateProvinceId" ColumnName="StateProvinceId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="ZipPostalCode" ColumnName="ZipPostalCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="CustomAttributes" ColumnName="CustomAttributes" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="LojaDB.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailToRevalidate" ColumnName="EmailToRevalidate" />
+                <ScalarProperty Name="AdminComment" ColumnName="AdminComment" />
+                <ScalarProperty Name="IsTaxExempt" ColumnName="IsTaxExempt" />
+                <ScalarProperty Name="AffiliateId" ColumnName="AffiliateId" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="HasShoppingCartItems" ColumnName="HasShoppingCartItems" />
+                <ScalarProperty Name="RequireReLogin" ColumnName="RequireReLogin" />
+                <ScalarProperty Name="FailedLoginAttempts" ColumnName="FailedLoginAttempts" />
+                <ScalarProperty Name="CannotLoginUntilDateUtc" ColumnName="CannotLoginUntilDateUtc" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="IsSystemAccount" ColumnName="IsSystemAccount" />
+                <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+                <ScalarProperty Name="LastIpAddress" ColumnName="LastIpAddress" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+                <ScalarProperty Name="LastLoginDateUtc" ColumnName="LastLoginDateUtc" />
+                <ScalarProperty Name="LastActivityDateUtc" ColumnName="LastActivityDateUtc" />
+                <ScalarProperty Name="RegisteredInStoreId" ColumnName="RegisteredInStoreId" />
+                <ScalarProperty Name="BillingAddress_Id" ColumnName="BillingAddress_Id" />
+                <ScalarProperty Name="ShippingAddress_Id" ColumnName="ShippingAddress_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenericAttribute">
+            <EntityTypeMapping TypeName="LojaDB.GenericAttribute">
+              <MappingFragment StoreEntitySet="GenericAttribute">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="KeyGroup" ColumnName="KeyGroup" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerPassword">
+            <EntityTypeMapping TypeName="LojaDB.CustomerPassword">
+              <MappingFragment StoreEntitySet="CustomerPassword">
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormatId" ColumnName="PasswordFormatId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_CustomerRole_Mapping">
+            <EntityTypeMapping TypeName="LojaDB.Customer_CustomerRole_Mapping">
+              <MappingFragment StoreEntitySet="Customer_CustomerRole_Mapping">
+                <ScalarProperty Name="CustomerRole_Id" ColumnName="CustomerRole_Id" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

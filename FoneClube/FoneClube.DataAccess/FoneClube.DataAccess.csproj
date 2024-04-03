@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63545F40-CB4C-4C25-AAAE-03D1198B4C9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoneClube.DataAccess</RootNamespace>
+    <AssemblyName>FoneClube.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Utilities, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EFUtilities.1.0.2\lib\EntityFramework.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="FoneClube.BoletoSimples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dlls\FoneClube.BoletoSimples.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.7.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HttpService">
+      <HintPath>dlls\HttpService.dll</HintPath>
+    </Reference>
+    <Reference Include="IronBarCode, Version=2020.12.2.0, Culture=neutral, PublicKeyToken=b971bb3971bdf306, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarCode.2020.12.2\lib\net40\IronBarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagarMe, Version=2.6.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pagar.me.2.7.1\lib\net45\PagarMe.dll</HintPath>
+    </Reference>
+    <Reference Include="PagarMe.Mpos">
+      <HintPath>..\packages\PagarMe.Mpos.2.0.0\lib\net40\PagarMe.Mpos.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.HtmlToPdf, Version=19.1.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.19.1.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\FixedStringParser.Test\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountAccess.cs" />
+    <Compile Include="Address.cs">
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="affiliates\Affiliates.cs" />
+    <Compile Include="blink\AffiliateBlinkMap.cs" />
+    <Compile Include="blink\BaseEntity.cs" />
+    <Compile Include="blink\BlinkIntegrationManager.cs" />
+    <Compile Include="blink\BlinkListItem.cs" />
+    <Compile Include="blink\BlinkSettings.cs" />
+    <Compile Include="ChargingAcess.cs" />
+    <Compile Include="chat2desk\ClientAccess.cs" />
+    <Compile Include="CieloAccess.cs" />
+    <Compile Include="ClaroAccess.cs" />
+    <Compile Include="ClaroContaAcesso.cs" />
+    <Compile Include="CobFullClaroMax_Sum.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobFullClaro_Extract_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobFullClaro_Sum.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobFullVivo_Extract_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobFullVivo_Sum.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComissionAccess.cs" />
+    <Compile Include="ContaAcesso.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPassword.cs">
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_CustomerRole_Mapping.cs">
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrCelularData.cs" />
+    <Compile Include="EmailAccess.cs" />
+    <Compile Include="FacilAccess.cs" />
+    <Compile Include="FebrabanContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FebrabanContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FebrabanContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FebrabanContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FebrabanContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FebrabanContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FoneClubeDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoneClubeDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoneClubeDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoneClubeDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoneClubeDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GenericAttribute.cs">
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllBasicCustomers_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllContelLinesInWebFCButNotInContel_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllContelLinesMappedToOtherOperator_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllContelLinesNotInFC_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCustomers_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLastCharging_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllPhoneLines_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllPhoneNumbersByPerson_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllPhoneNumbers_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCieloTransactionsToRestore_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetClientesComPagamento_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetClientesSemPagamento_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetComissoesCustomer_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerBonusDetails_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerPhonesUltimasCobrancasPagasGeneric_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerPhonesUltimasCobrancasPagas_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomersPendingFlags_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDivergencias_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFacilSalePlanPercentage_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFacilSaleStatsByFilter_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFacilSaleStatsPercentage_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFacilSaleStats_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFilhosHierarquiaNaoPagante_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFilhosHierarquiaPagante_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFilhosHierarquia_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFilhosSemPai_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFilhos_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHistoricoPagamento_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetInternationalDepositsReport_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetInternationalTransactionReport_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLastChargingHistory_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLinhasComDetalhesCobrancaMassiva_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLinhasFoneclubeAtivas_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLinhasFoneclubeEstoque_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLinhasFoneclubeMinimal_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLinhasStatusUso_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getList24hsLate_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMutiplosFilhosHierarquia_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMutiplosFilhos_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNewTransactionsPagarme_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNonTopLinesInXDays_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPagarmeTransactionReport_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPaternidadeStatusFilhos_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPhoneLinesByPerson_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPlansForComparison_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetRefusedCCChargeForResend_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTodosClientes_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransacoesAptasComissaoCielo_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransacoesAptasComissaoNovaLoja_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransacoesAptasComissao_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransacoesPagas_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransactionsSoltasPagarme_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetValoresCobrarClaro_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetValoresCobrarVivo_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetValoresOperadoraClaro_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ApiHelper.cs" />
+    <Compile Include="Helper\SQLHelper.cs" />
+    <Compile Include="logger\Logger.cs" />
+    <Compile Include="LojaAccess.cs" />
+    <Compile Include="LojaDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LojaDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LojaDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LojaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LojaDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LojaDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerOperator.cs" />
+    <Compile Include="MessageAccess.cs" />
+    <Compile Include="MobiMatterAccess.cs" />
+    <Compile Include="MVNOAccess.cs" />
+    <Compile Include="pagarme\PagarmeAccess.cs" />
+    <Compile Include="PhoneAccess.cs" />
+    <Compile Include="PrAvailablePhoneNumbers_Result.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="security\EncryptionService.cs" />
+    <Compile Include="security\IEncryptionService.cs" />
+    <Compile Include="security\ISettings.cs" />
+    <Compile Include="security\Security.cs" />
+    <Compile Include="security\SecuritySettings.cs" />
+    <Compile Include="ShopifyAccess.cs" />
+    <Compile Include="StatusAPIAccess.cs" />
+    <Compile Include="SuperZapBotAccess.cs" />
+    <Compile Include="tblAgGridState.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblApiTokenInfo.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBilhetacoesFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBonusOptions.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBonusOrder.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBonusOrderException.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBonusOrderLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCCRefusedLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblChargingHistory.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblChargingLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblChargingScheduled.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCheckoutPagarMeLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCieloPaymentLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCieloPaymentStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblComissionOrder.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblComissionTokens.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblComissionValidationLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommisionLevels.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommissionOrders.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommissions.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblConfigSettings.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContasClaro.cs">
+      <DependentUpon>FebrabanContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContasClaroLinhaRegistro.cs">
+      <DependentUpon>FebrabanContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContasClaroRegistroNotaFiscal.cs">
+      <DependentUpon>FebrabanContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContasFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContelBlockedStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContelLinhasList.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContelPlanMapping.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContelTopupHistory.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContelTopupHistoryExcel.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDescontoOrder.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDescontosFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDiscountPrice.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDrCelularTemp.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmailLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmailTemplates.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEnderecosFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbleSimActivationInfo.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblESimICCIDPool.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblExternalLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFoneclubePagarmeTransactions.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFoneclubePagarmeTransactionsSecond.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGenericFlags.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGenericPhoneFlags.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHeadsFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHistoryEvents.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInternationActivationPool.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInternationActivationPoolLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInternationalDeposits.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInternationalUserBalance.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInternationalUserPurchases.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblIntlFailedActivations.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLineRecord.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLinesForTopupPool.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogBackupCharging.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogComissionOrder.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogTipo.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMassChargingLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOperadoras.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPagarmeTransactionsUserUpdateStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPagarmeWebhookStatusLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPastPagarmeUpdate.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPaymentTypes.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonAssociationHistory.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersons.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonsAddresses.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonsImages.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonsParents.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonsPhones.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersosAffiliateLinks.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhoneFlags.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhonePropertyHistory.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhones.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhonesPendingToPort.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhonesReadyToReset.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhonesServices.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhonesStockProperty.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhoneStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhoneStock.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPlanDetails.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPlanDetailType.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPlans.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPlansOptions.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReferred.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRegisterCustomersLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRenovaSenha.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblResumosFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSaldoReminders.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblServiceOrders.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblServices.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblServicosFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblShopifySalesInfo.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStoreCustomerPlans.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStoreOrders.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTotalizadoresFebraban.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTransactionsCielo.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUnPlacedCartItems.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserSettings.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWebfcTopupAtContel.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsAppBotUserData.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsAppFailedStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsAppLog.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsappMessages.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsAppMessageTemplates.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWhatsAppStatus.cs">
+      <DependentUpon>FoneClubeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionAccess.cs" />
+    <Compile Include="Utilities\Helper.cs" />
+    <Compile Include="Utilities\PdfParser.cs" />
+    <Compile Include="Utilities\QRCodeHelper.cs" />
+    <Compile Include="Utilities\WhatsAppUtil.cs" />
+    <Compile Include="VivoAccess.cs" />
+    <Compile Include="WhatsAppAccess.cs" />
+    <Compile Include="woo\WooAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="FoneClubeDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FoneClubeDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="consultas\FoneClube\FoneClube.ssmssln" />
+    <None Include="consultas\FoneClube\FoneClube\FoneClube.ssmssqlproj" />
+    <EntityDeploy Include="FebrabanContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FebrabanContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FebrabanContext.edmx.diagram">
+      <DependentUpon>FebrabanContext.edmx</DependentUpon>
+    </None>
+    <None Include="FoneClubeDB.edmx.diagram">
+      <DependentUpon>FoneClubeDB.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="LojaDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LojaDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LojaDB.edmx.diagram">
+      <DependentUpon>LojaDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="consultas\FoneClube\FoneClube\consultas.sql" />
+    <Content Include="consultas\FoneClube\FoneClube\create-febraban.sql" />
+    <Content Include="consultas\FoneClube\FoneClube\create-log.sql" />
+    <Content Include="consultas\FoneClube\FoneClube\create-persons.sql" />
+    <Content Include="consultas\FoneClube\FoneClube\populate-operators-plans.sql" />
+    <Content Include="consultas\trash-temp\Consultas.sql" />
+    <Content Include="consultas\trash-temp\scrip-tabelas.sql" />
+    <Content Include="FebrabanContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FebrabanContext.edmx</DependentUpon>
+      <LastGenOutput>FebrabanContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FebrabanContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FebrabanContext.edmx</DependentUpon>
+      <LastGenOutput>FebrabanContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="FoneClubeDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FoneClubeDB.edmx</DependentUpon>
+      <LastGenOutput>FoneClubeDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FoneClubeDB.edmx.sql" />
+    <Content Include="FoneClubeDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FoneClubeDB.edmx</DependentUpon>
+      <LastGenOutput>FoneClubeDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="LojaDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LojaDB.edmx</DependentUpon>
+      <LastGenOutput>LojaDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LojaDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LojaDB.edmx</DependentUpon>
+      <LastGenOutput>LojaDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dlls\" />
+    <Folder Include="security\cripto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business.Commons\FoneClube.Business.Commons.csproj">
+      <Project>{787b74d3-b06d-460c-b5e9-57e19e462675}</Project>
+      <Name>FoneClube.Business.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CieloLib\CieloLib.csproj">
+      <Project>{d95e3e6c-d27a-42f3-ae76-e775cf1b7f77}</Project>
+      <Name>CieloLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

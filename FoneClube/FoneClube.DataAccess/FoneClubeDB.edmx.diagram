@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab4a209d61a8401f9985e5265c5c5ce2" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="Model.tblCommissions" Width="1.5" PointX="3.75" PointY="3.625" />
+        <EntityTypeShape EntityType="Model.tblLog" Width="1.5" PointX="16" PointY="0.875" />
+        <EntityTypeShape EntityType="Model.tblLogTipo" Width="1.5" PointX="13.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Model.tblOperadoras" Width="1.5" PointX="1.5" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.tblPaymentTypes" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.tblPlanDetails" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblPlanDetailType" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblPlans" Width="1.5" PointX="6" PointY="14.5" />
+        <EntityTypeShape EntityType="Model.tblReferred" Width="1.5" PointX="6" PointY="11.375" />
+        <AssociationConnector Association="Model.FK__tblReferr__intId__50C5FA01" />
+        <AssociationConnector Association="Model.FK__tblLog__intIdTip__5165187F" />
+        <EntityTypeShape EntityType="Model.tblBilhetacoesFebraban" Width="1.5" PointX="10.625" PointY="16.5" />
+        <EntityTypeShape EntityType="Model.tblContasFebraban" Width="1.5" PointX="8.375" PointY="27" />
+        <EntityTypeShape EntityType="Model.tblDescontosFebraban" Width="1.5" PointX="10.625" PointY="6.125" />
+        <EntityTypeShape EntityType="Model.tblEnderecosFebraban" Width="1.5" PointX="10.625" PointY="25.25" />
+        <EntityTypeShape EntityType="Model.tblHeadsFebraban" Width="1.5" PointX="10.625" PointY="12.125" />
+        <EntityTypeShape EntityType="Model.tblResumosFebraban" Width="1.5" PointX="10.625" PointY="31.375" />
+        <EntityTypeShape EntityType="Model.tblServicosFebraban" Width="1.5" PointX="10.625" PointY="44.25" />
+        <EntityTypeShape EntityType="Model.tblTotalizadoresFebraban" Width="1.5" PointX="10.625" PointY="40.125" />
+        <AssociationConnector Association="Model.FK__tblBilhet__intCo__186C9245" />
+        <AssociationConnector Association="Model.FK__tblDescon__intCo__1E256B9B" />
+        <AssociationConnector Association="Model.FK__tblEndere__intCo__1590259A" />
+        <AssociationConnector Association="Model.FK__tblHeadsF__intCo__0FD74C44" />
+        <AssociationConnector Association="Model.FK__tblResumo__intCo__12B3B8EF" />
+        <AssociationConnector Association="Model.FK__tblServic__intCo__1B48FEF0" />
+        <AssociationConnector Association="Model.FK__tblTotali__intCo__2101D846" />
+        <EntityTypeShape EntityType="Model.tblDiscountPrice" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="Model.tblPersonsImages" Width="1.5" PointX="3" PointY="32.75" />
+        <EntityTypeShape EntityType="Model.tblPersonsParents" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblServiceOrders" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.CobFullClaro_Sum" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblHistoryEvents" Width="1.5" PointX="0.75" PointY="23.125" />
+        <EntityTypeShape EntityType="Model.tblPhoneStatus" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="Model.tblPhones" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblFoneclubePagarmeTransactions" Width="1.5" PointX="15.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblCheckoutPagarMeLog" Width="1.5" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.tblCommisionLevels" Width="1.5" PointX="17.375" PointY="4.25" />
+        <EntityTypeShape EntityType="Model.tblComissionTokens" Width="1.5" PointX="21.875" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.tblBonusOptions" Width="1.5" PointX="5.375" PointY="7.875" />
+        <EntityTypeShape EntityType="Model.tblEmailTemplates" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.tblChargingLog" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.tblPhoneFlags" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblPhonePropertyHistory" Width="1.5" PointX="7.375" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.tblPersonAssociationHistory" Width="1.5" PointX="13.375" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.CobFullVivo_Sum" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.tblPastPagarmeUpdate" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblLogBackupCharging" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.tblLogComissionOrder" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblBonusOrderLog" Width="1.5" PointX="19.375" PointY="19.75" />
+        <EntityTypeShape EntityType="Model.tblBonusOrderException" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblCommissionOrders" Width="1.5" PointX="13" PointY="14" />
+        <AssociationConnector Association="Model.FK__tblCommis__intId__0A9D95DB" />
+        <EntityTypeShape EntityType="Model.tblComissionValidationLog" Width="1.5" PointX="19.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblCieloPaymentLog" Width="1.5" PointX="21.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblEmailLog" Width="1.5" PointX="3" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.tblPhonesServices" Width="1.5" PointX="5.25" PointY="37.375" />
+        <EntityTypeShape EntityType="Model.tblServices" Width="1.5" PointX="13.375" PointY="22" />
+        <AssociationConnector Association="Model.FK__tblPhones__intId__3A02903A" />
+        <EntityTypeShape EntityType="Model.tblBonusOrder" Width="1.5" PointX="19.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.tblCieloPaymentStatus" Width="1.5" PointX="21.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.tblComissionOrder" Width="1.5" PointX="19.625" PointY="9.375" />
+        <AssociationConnector Association="Model.FK__tblComiss__intId__12C8C788" />
+        <AssociationConnector Association="Model.FK__tblComiss__intId__11D4A34F" />
+        <AssociationConnector Association="Model.FK__tblComiss__intId__1699586C" />
+        <EntityTypeShape EntityType="Model.tblWhatsappMessages" Width="1.5" PointX="22.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.tblGenericPhoneFlags" Width="1.5" PointX="23.625" PointY="22.875" />
+        <EntityTypeShape EntityType="Model.tblGenericFlags" Width="1.5" PointX="21.375" PointY="24.125" />
+        <AssociationConnector Association="Model.FK__tblGeneri__intId__04659998" />
+        <EntityTypeShape EntityType="Model.CobFullClaroMax_Sum" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblTransactionsCielo" Width="1.5" PointX="23.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.tblMassChargingLog" Width="1.5" PointX="7.375" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.tblPhoneStock" Width="1.5" PointX="23.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.tblRegisterCustomersLog" Width="1.5" PointX="13.375" PointY="25.75" />
+        <EntityTypeShape EntityType="Model.tblPersosAffiliateLinks" Width="1.5" PointX="3" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.tblPersonsAddresses" Width="1.5" PointX="3" PointY="20.5" />
+        <EntityTypeShape EntityType="Model.tblPhonesStockProperty" Width="1.5" PointX="25.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.tblPlansOptions" Width="1.5" PointX="3.75" PointY="43.125" />
+        <AssociationConnector Association="Model.FK__tblPlansO__intId__1AD3FDA4" />
+        <AssociationConnector Association="Model.FK__tblPlans__intIdO__18EBB532" />
+        <EntityTypeShape EntityType="Model.tblRenovaSenha" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblPersonsPhones" Width="1.5" PointX="3" PointY="36.125" />
+        <AssociationConnector Association="Model.FK__tblPhones__intId__390E6C01" />
+        <EntityTypeShape EntityType="Model.tblDescontoOrder" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblPersons" Width="1.5" PointX="28.75" PointY="20.375" />
+        <AssociationConnector Association="Model.FK__tblComiss__intId__13BCEBC1" />
+        <AssociationConnector Association="Model.FK__tblComiss__intId__178D7CA5" />
+        <AssociationConnector Association="Model.FK__tblCommis__intId__0B91BA14" />
+        <AssociationConnector Association="Model.FK__tblDiscou__intId__0F624AF8" />
+        <AssociationConnector Association="Model.FK__tblEmailL__intId__12E8C319" />
+        <AssociationConnector Association="Model.FK__tblPerson__intId__160F4887" />
+        <AssociationConnector Association="Model.FK__tblPerson__intId__17036CC0" />
+        <AssociationConnector Association="Model.FK__tblPerson__intId__17F790F9" />
+        <AssociationConnector Association="Model.FK__tblPersos__intId__697C9932" />
+        <AssociationConnector Association="Model.FK__tblPlans__intIdP__19DFD96B" />
+        <AssociationConnector Association="Model.FK__tblReferr__intId__1CBC4616" />
+        <AssociationConnector Association="Model.FK__tblReferr__intId__1DB06A4F" />
+        <AssociationConnector Association="Model.FK__tblRenova__intId__1C0818FF" />
+        <EntityTypeShape EntityType="Model.tblChargingHistory" Width="1.5" PointX="31" PointY="20.375" />
+        <AssociationConnector Association="Model.FK__tblChargi__intId__07C12930" />
+        <AssociationConnector Association="Model.FK__tblChargi__intId__08B54D69" />
+        <AssociationConnector Association="Model.FK__tblChargi__Phone__09A971A2" />
+        <EntityTypeShape EntityType="Model.tblFoneclubePagarmeTransactionsSecond" Width="1.5" PointX="5.375" PointY="25.75" />
+        <EntityTypeShape EntityType="Model.tblChargingScheduled" Width="1.5" PointX="34" PointY="20.25" />
+        <AssociationConnector Association="Model.FK__tblChargi__intId__0F6D37F0" />
+        <AssociationConnector Association="Model.FK__tblChargi__intId__10615C29" />
+        <AssociationConnector Association="Model.FK__tblChargi__Phone__11558062" />
+        <EntityTypeShape EntityType="Model.tblWhatsAppMessageTemplates" Width="1.5" PointX="25.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.tblPagarmeTransactionsUserUpdateStatus" Width="1.5" PointX="4.375" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.tblDrCelularTemp" Width="1.5" PointX="26.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblWhatsAppStatus" Width="1.5" PointX="23.375" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.tblWhatsAppFailedStatus" Width="1.5" PointX="25.375" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.tblUserSettings" Width="1.5" PointX="27.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblWhatsAppBotUserData" Width="1.5" PointX="27.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Model.tblPhonesPendingToPort" Width="1.5" PointX="19.375" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.tblPagarmeWebhookStatusLog" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblWhatsAppLog" Width="1.5" PointX="28.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tblContelLinhasList" Width="1.5" PointX="28.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tblContelLinhasList1" Width="1.5" PointX="29.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblAgGridState" Width="1.5" PointX="29.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblConfigSettings" Width="1.5" PointX="13.375" PointY="29.75" />
+        <EntityTypeShape EntityType="Model.tblWebfcTopupAtContel" Width="1.5" PointX="15.375" PointY="29.75" />
+        <EntityTypeShape EntityType="Model.tblStoreCustomerPlans" Width="1.5" PointX="30.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblSaldoReminders" Width="1.5" PointX="29.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Model.tblContelTopupHistory" Width="1.5" PointX="30.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Model.tblContelBlockedStatus" Width="1.5" PointX="17.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblUnPlacedCartItems" Width="1.5" PointX="30.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.tblStoreOrders" Width="1.5" PointX="19.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblCCRefusedLog" Width="1.5" PointX="21.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblContelTopupHistoryExcel" Width="1.5" PointX="23.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblApiTokenInfo" Width="1.5" PointX="25.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblExternalLog" Width="1.5" PointX="27.375" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tblContelPlanMapping" Width="1.5" PointX="7.375" PointY="31.75" />
+        <EntityTypeShape EntityType="Model.tblInternationActivationPool" Width="1.5" PointX="31.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblInternationalDeposits" Width="1.5" PointX="31" PointY="33.25" />
+        <EntityTypeShape EntityType="Model.tblInternationalUserBalance" Width="1.5" PointX="31" PointY="37.125" />
+        <EntityTypeShape EntityType="Model.tblInternationalUserPurchases" Width="1.5" PointX="31.375" PointY="16.75" />
+        <AssociationConnector Association="Model.FK__tblIntern__intId__6F7569AA" />
+        <AssociationConnector Association="Model.FK__tblIntern__intId__7251D655" />
+        <EntityTypeShape EntityType="Model.tbleSimActivationInfo" Width="1.5" PointX="32.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tblIntlFailedActivations" Width="1.5" PointX="32.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.tblInternationActivationPoolLog" Width="1.5" PointX="32.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.tblESimICCIDPool" Width="1.5" PointX="33.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.tblLinesForTopupPool" Width="1.5" PointX="33.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Model.tblShopifySalesInfo" Width="1.5" PointX="25.375" PointY="33.75" />
+        <EntityTypeShape EntityType="Model.tblPhonesReadyToReset" Width="1.5" PointX="27.375" PointY="33.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

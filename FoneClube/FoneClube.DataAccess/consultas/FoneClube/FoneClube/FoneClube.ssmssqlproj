@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FoneClube">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="198.38.83.33:rodigocp_desenvolvimentoadmin">
+          <Created>2017-05-09T18:39:19.1004575-03:00</Created>
+          <Type>SQL</Type>
+          <Server>198.38.83.33</Server>
+          <UserName>rodigocp_desenvolvimentoadmin</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:foneclubedb">
+          <Created>2017-03-29T10:36:24.6018674-03:00</Created>
+          <Type>SQL</Type>
+          <Server>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</Server>
+          <UserName>foneclubedb</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="consultas.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:198.38.83.33:False:rodigocp_desenvolvimentoadmin</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>198.38.83.33</AssociatedConnSrvName>
+          <AssociatedConnUserName>rodigocp_desenvolvimentoadmin</AssociatedConnUserName>
+          <FullPath>consultas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="create-febraban.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:False:foneclubedb</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</AssociatedConnSrvName>
+          <AssociatedConnUserName>foneclubedb</AssociatedConnUserName>
+          <FullPath>create-febraban.sql</FullPath>
+        </FileNode>
+        <FileNode Name="create-log.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:False:foneclubedb</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</AssociatedConnSrvName>
+          <AssociatedConnUserName>foneclubedb</AssociatedConnUserName>
+          <FullPath>create-log.sql</FullPath>
+        </FileNode>
+        <FileNode Name="create-persons.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:False:foneclubedb</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</AssociatedConnSrvName>
+          <AssociatedConnUserName>foneclubedb</AssociatedConnUserName>
+          <FullPath>create-persons.sql</FullPath>
+        </FileNode>
+        <FileNode Name="populate-comissions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:False:foneclubedb</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</AssociatedConnSrvName>
+          <AssociatedConnUserName>foneclubedb</AssociatedConnUserName>
+          <FullPath>populate-comissions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="populate-operators-plans.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433:False:foneclubedb</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>foneclubedb.cngexf2rg6n1.us-east-2.rds.amazonaws.com,1433</AssociatedConnSrvName>
+          <AssociatedConnUserName>foneclubedb</AssociatedConnUserName>
+          <FullPath>populate-operators-plans.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

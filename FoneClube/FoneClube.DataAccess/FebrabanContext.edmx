@@ -1,0 +1,1206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FebrabranEntitiesContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBilhetacoesFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDegrauRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCNLLocalidadeChamada" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalidadeChamada" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUFTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODNacionalInternacional" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODOperadora" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoOperadora" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODPais" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtAreaDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtConjugadoNumeroTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDuracaoLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtHorarioLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtTipoChamada" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtGrupoHorarioTarifario" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoHorarioTarifario" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDegrauLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtAliquotaICMS" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorLigacaoComImposto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtClasseServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblContasClaro">
+          <Key>
+            <PropertyRef Name="intContaId" />
+          </Key>
+          <Property Name="intContaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dteInsert" Type="datetime" Nullable="false" />
+          <Property Name="txtIdContaUnica" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataGeracaoArquivo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIdentificadorEmpresa" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEnderecoCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataReferenciaInicio" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataReferenciaFim" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValor" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoReferenciaDebitoAutomatico" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblContasClaroLinhaRegistro">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSecao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtData" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtHora" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtOrigemUFDestino" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumero" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDuracaoQuantidade" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtTarifa" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValor" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorCobrado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNome" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtMatricula" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSubSecao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtTipoImposto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalOrigem" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalDestino" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoLocalOrigem" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoLocalDestino" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblContasClaroRegistroNotaFiscal">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" Nullable="false" />
+          <Property Name="txtNotaFiscal" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigo" Type="varchar" MaxLength="50" />
+          <Property Name="txtTipo" Type="varchar" MaxLength="50" />
+          <Property Name="txtAliquota" Type="varchar" MaxLength="50" />
+          <Property Name="txtBaseCalculo" Type="varchar" MaxLength="50" />
+          <Property Name="txtValorImposto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblContasFebraban">
+          <Key>
+            <PropertyRef Name="intContaId" />
+          </Key>
+          <Property Name="intContaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dteInsert" Type="datetime" Nullable="false" />
+          <Property Name="dteGeracaoConta" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="intTipoOperadora" Type="int" Nullable="false" />
+          <Property Name="txtIdContaUnica" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="intIdContaUnica" Type="bigint" Nullable="false" />
+          <Property Name="intIdEmissao" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDescontosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtGrupoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoGrupoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtBaseCalculoDesconto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtPercentualDesconto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataInicioAcerto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtHoraInicioAcerto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataFimAcerto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtHoraFimAcerto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtClasseServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblEnderecosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCNLRecursoEnderecoPontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalidadePontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUFLocalidadePontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEnderecoPontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroEnderecoPontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtComplementoPontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtBairroPontaA" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCNLRecursoEnderecoPontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalidadePontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUFLocalidadePontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEnderecoPontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroEnderecoPontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtComplementoPontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtBairroPontaB" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHeadsFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIdContaUnica" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataGeracaoArquivo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIdentificadorEmpresa" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmpresaUF" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtClienteCGC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblResumosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtLocalidade" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtTipoServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDegrauRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVelocidadeRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUnidadeVelocidadeRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtInicioAssinatura" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFimAssinatura" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtInicioPeriodoServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFimPeriodoServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUnidadeConsumo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtQuantidadeConsumo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalValorConsumo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorConsumo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalAssinatura" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorAssinatura" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtAliquota" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalICMS" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorICMS" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalTotalOutrosImpostos" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorTotalImpostos" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroNotaFiscal" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalValorConta" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorConta" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblServicosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDataServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCNLLocalidadeChamada" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNomeLocalidadeChamada" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtUFTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODNacionalInternacional" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODOperadora" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoOperadora" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCODPais" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtAreaDDD" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtNumeroTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtConjugadoNumeroTelefoneChamado" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDuracaoLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtHorarioLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtGrupoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoGrupoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtDescricaoCategoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorLigacao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtClasseServico" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTotalizadoresFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intContaId" Type="int" />
+          <Property Name="txtControleSequencial" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtCodigoCliente" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtVencimento" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtEmissao" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtQuantidadeRegistros" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtQuantidadeLinhas" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtSinalTotal" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtValorTotal" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="txtFiller" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblBilhet__intCo__444B1483">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblBilhetacoesFebraban" Type="Self.tblBilhetacoesFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblBilhetacoesFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDescon__intCo__4A03EDD9">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblDescontosFebraban" Type="Self.tblDescontosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblDescontosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEndere__intCo__416EA7D8">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblEnderecosFebraban" Type="Self.tblEnderecosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblEnderecosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblHeadsF__intCo__3BB5CE82">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblHeadsFebraban" Type="Self.tblHeadsFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblHeadsFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblResumo__intCo__3E923B2D">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblResumosFebraban" Type="Self.tblResumosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblResumosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblServic__intCo__4727812E">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblServicosFebraban" Type="Self.tblServicosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblServicosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblTotali__intCo__4CE05A84">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblTotalizadoresFebraban" Type="Self.tblTotalizadoresFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblTotalizadoresFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblContasClaroLinhaRegistro">
+          <End Role="tblContasClaro" Type="Self.tblContasClaro" Multiplicity="1" />
+          <End Role="tblContasClaroLinhaRegistro" Type="Self.tblContasClaroLinhaRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasClaro">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblContasClaroLinhaRegistro">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblContasClaroRegistroNotaFiscal">
+          <End Role="tblContasClaro" Type="Self.tblContasClaro" Multiplicity="1" />
+          <End Role="tblContasClaroRegistroNotaFiscal" Type="Self.tblContasClaroRegistroNotaFiscal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasClaro">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblContasClaroRegistroNotaFiscal">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FebrabranEntitiesContextStoreContainer">
+          <EntitySet Name="tblBilhetacoesFebraban" EntityType="Self.tblBilhetacoesFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContasClaro" EntityType="Self.tblContasClaro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContasClaroLinhaRegistro" EntityType="Self.tblContasClaroLinhaRegistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContasClaroRegistroNotaFiscal" EntityType="Self.tblContasClaroRegistroNotaFiscal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContasFebraban" EntityType="Self.tblContasFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDescontosFebraban" EntityType="Self.tblDescontosFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEnderecosFebraban" EntityType="Self.tblEnderecosFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHeadsFebraban" EntityType="Self.tblHeadsFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblResumosFebraban" EntityType="Self.tblResumosFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblServicosFebraban" EntityType="Self.tblServicosFebraban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTotalizadoresFebraban" EntityType="Self.tblTotalizadoresFebraban" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblBilhet__intCo__444B1483" Association="Self.FK__tblBilhet__intCo__444B1483">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblBilhetacoesFebraban" EntitySet="tblBilhetacoesFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDescon__intCo__4A03EDD9" Association="Self.FK__tblDescon__intCo__4A03EDD9">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblDescontosFebraban" EntitySet="tblDescontosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEndere__intCo__416EA7D8" Association="Self.FK__tblEndere__intCo__416EA7D8">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblEnderecosFebraban" EntitySet="tblEnderecosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblHeadsF__intCo__3BB5CE82" Association="Self.FK__tblHeadsF__intCo__3BB5CE82">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblHeadsFebraban" EntitySet="tblHeadsFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblResumo__intCo__3E923B2D" Association="Self.FK__tblResumo__intCo__3E923B2D">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblResumosFebraban" EntitySet="tblResumosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblServic__intCo__4727812E" Association="Self.FK__tblServic__intCo__4727812E">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblServicosFebraban" EntitySet="tblServicosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblTotali__intCo__4CE05A84" Association="Self.FK__tblTotali__intCo__4CE05A84">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblTotalizadoresFebraban" EntitySet="tblTotalizadoresFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblContasClaroLinhaRegistro" Association="Self.FK_tblContasClaroLinhaRegistro">
+            <End Role="tblContasClaro" EntitySet="tblContasClaro" />
+            <End Role="tblContasClaroLinhaRegistro" EntitySet="tblContasClaroLinhaRegistro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblContasClaroRegistroNotaFiscal" Association="Self.FK_tblContasClaroRegistroNotaFiscal">
+            <End Role="tblContasClaro" EntitySet="tblContasClaro" />
+            <End Role="tblContasClaroRegistroNotaFiscal" EntitySet="tblContasClaroRegistroNotaFiscal" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FebrabranEntitiesContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblBilhetacoesFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVencimento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDegrauRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDataLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCNLLocalidadeChamada" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNomeLocalidadeChamada" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUFTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODNacionalInternacional" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODOperadora" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoOperadora" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODPais" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtAreaDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtConjugadoNumeroTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDuracaoLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtHorarioLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtTipoChamada" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtGrupoHorarioTarifario" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoHorarioTarifario" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDegrauLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtAliquotaICMS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorLigacaoComImposto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtClasseServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblBilhet__intCo__444B1483" FromRole="tblBilhetacoesFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <EntityType Name="tblContasFebraban">
+          <Key>
+            <PropertyRef Name="intContaId" />
+          </Key>
+          <Property Name="intContaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dteInsert" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dteGeracaoConta" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="intTipoOperadora" Type="Int32" Nullable="false" />
+          <Property Name="txtIdContaUnica" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="intIdContaUnica" Type="Int64" Nullable="false" />
+          <Property Name="intIdEmissao" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblBilhetacoesFebraban" Relationship="Self.FK__tblBilhet__intCo__444B1483" FromRole="tblContasFebraban" ToRole="tblBilhetacoesFebraban" />
+          <NavigationProperty Name="tblDescontosFebraban" Relationship="Self.FK__tblDescon__intCo__4A03EDD9" FromRole="tblContasFebraban" ToRole="tblDescontosFebraban" />
+          <NavigationProperty Name="tblEnderecosFebraban" Relationship="Self.FK__tblEndere__intCo__416EA7D8" FromRole="tblContasFebraban" ToRole="tblEnderecosFebraban" />
+          <NavigationProperty Name="tblResumosFebraban" Relationship="Self.FK__tblResumo__intCo__3E923B2D" FromRole="tblContasFebraban" ToRole="tblResumosFebraban" />
+          <NavigationProperty Name="tblServicosFebraban" Relationship="Self.FK__tblServic__intCo__4727812E" FromRole="tblContasFebraban" ToRole="tblServicosFebraban" />
+          <NavigationProperty Name="tblTotalizadoresFebraban" Relationship="Self.FK__tblTotali__intCo__4CE05A84" FromRole="tblContasFebraban" ToRole="tblTotalizadoresFebraban" />
+          <NavigationProperty Name="tblHeadsFebraban" Relationship="FebrabranEntitiesContext.FK__tblHeadsF__intCo__3BB5CE82" FromRole="tblContasFebraban" ToRole="tblHeadsFebraban" />
+        </EntityType>
+        <EntityType Name="tblDescontosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVencimento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtGrupoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoGrupoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtBaseCalculoDesconto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtPercentualDesconto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDataInicioAcerto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtHoraInicioAcerto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDataFimAcerto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtHoraFimAcerto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtClasseServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblDescon__intCo__4A03EDD9" FromRole="tblDescontosFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <EntityType Name="tblEnderecosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCNLRecursoEnderecoPontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNomeLocalidadePontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUFLocalidadePontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEnderecoPontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroEnderecoPontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtComplementoPontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtBairroPontaA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCNLRecursoEnderecoPontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNomeLocalidadePontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUFLocalidadePontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEnderecoPontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroEnderecoPontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtComplementoPontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtBairroPontaB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblEndere__intCo__416EA7D8" FromRole="tblEnderecosFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <EntityType Name="tblResumosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVencimento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtLocalidade" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtTipoServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDegrauRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVelocidadeRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUnidadeVelocidadeRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtInicioAssinatura" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFimAssinatura" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtInicioPeriodoServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFimPeriodoServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUnidadeConsumo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtQuantidadeConsumo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalValorConsumo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorConsumo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalAssinatura" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorAssinatura" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtAliquota" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalICMS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorICMS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalTotalOutrosImpostos" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorTotalImpostos" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroNotaFiscal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalValorConta" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorConta" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblResumo__intCo__3E923B2D" FromRole="tblResumosFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <EntityType Name="tblServicosFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVencimento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtIDUnicoNRC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtRecursoCNL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCaracteristicaRecurso" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDataServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCNLLocalidadeChamada" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNomeLocalidadeChamada" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtUFTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODNacionalInternacional" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODOperadora" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoOperadora" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCODPais" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtAreaDDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtNumeroTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtConjugadoNumeroTelefoneChamado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDuracaoLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtHorarioLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtGrupoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoGrupoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtDescricaoCategoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalValorLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorLigacao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtClasseServico" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblServic__intCo__4727812E" FromRole="tblServicosFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <EntityType Name="tblTotalizadoresFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtCodigoCliente" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtVencimento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtEmissao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtQuantidadeRegistros" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtQuantidadeLinhas" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtSinalTotal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtValorTotal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txtFiller" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="Self.FK__tblTotali__intCo__4CE05A84" FromRole="tblTotalizadoresFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <Association Name="FK__tblBilhet__intCo__444B1483">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblBilhetacoesFebraban" Type="Self.tblBilhetacoesFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblBilhetacoesFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDescon__intCo__4A03EDD9">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblDescontosFebraban" Type="Self.tblDescontosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblDescontosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEndere__intCo__416EA7D8">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblEnderecosFebraban" Type="Self.tblEnderecosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblEnderecosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblResumo__intCo__3E923B2D">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblResumosFebraban" Type="Self.tblResumosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblResumosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblServic__intCo__4727812E">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblServicosFebraban" Type="Self.tblServicosFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblServicosFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblTotali__intCo__4CE05A84">
+          <End Role="tblContasFebraban" Type="Self.tblContasFebraban" Multiplicity="0..1" />
+          <End Role="tblTotalizadoresFebraban" Type="Self.tblTotalizadoresFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblTotalizadoresFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FebrabanContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBilhetacoesFebraban" EntityType="Self.tblBilhetacoesFebraban" />
+          <EntitySet Name="tblContasFebraban" EntityType="Self.tblContasFebraban" />
+          <EntitySet Name="tblDescontosFebraban" EntityType="Self.tblDescontosFebraban" />
+          <EntitySet Name="tblEnderecosFebraban" EntityType="Self.tblEnderecosFebraban" />
+          <EntitySet Name="tblResumosFebraban" EntityType="Self.tblResumosFebraban" />
+          <EntitySet Name="tblServicosFebraban" EntityType="Self.tblServicosFebraban" />
+          <EntitySet Name="tblTotalizadoresFebraban" EntityType="Self.tblTotalizadoresFebraban" />
+          <AssociationSet Name="FK__tblBilhet__intCo__444B1483" Association="Self.FK__tblBilhet__intCo__444B1483">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblBilhetacoesFebraban" EntitySet="tblBilhetacoesFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDescon__intCo__4A03EDD9" Association="Self.FK__tblDescon__intCo__4A03EDD9">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblDescontosFebraban" EntitySet="tblDescontosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEndere__intCo__416EA7D8" Association="Self.FK__tblEndere__intCo__416EA7D8">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblEnderecosFebraban" EntitySet="tblEnderecosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblResumo__intCo__3E923B2D" Association="Self.FK__tblResumo__intCo__3E923B2D">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblResumosFebraban" EntitySet="tblResumosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblServic__intCo__4727812E" Association="Self.FK__tblServic__intCo__4727812E">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblServicosFebraban" EntitySet="tblServicosFebraban" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblTotali__intCo__4CE05A84" Association="Self.FK__tblTotali__intCo__4CE05A84">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblTotalizadoresFebraban" EntitySet="tblTotalizadoresFebraban" />
+          </AssociationSet>
+          <EntitySet Name="tblContasClaro" EntityType="FebrabranEntitiesContext.tblContasClaro" />
+          <EntitySet Name="tblContasClaroLinhaRegistro" EntityType="FebrabranEntitiesContext.tblContasClaroLinhaRegistro" />
+          <EntitySet Name="tblContasClaroRegistroNotaFiscal" EntityType="FebrabranEntitiesContext.tblContasClaroRegistroNotaFiscal" />
+          <AssociationSet Name="FK_tblContasClaroLinhaRegistro" Association="FebrabranEntitiesContext.FK_tblContasClaroLinhaRegistro">
+            <End Role="tblContasClaro" EntitySet="tblContasClaro" />
+            <End Role="tblContasClaroLinhaRegistro" EntitySet="tblContasClaroLinhaRegistro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblContasClaroRegistroNotaFiscal" Association="FebrabranEntitiesContext.FK_tblContasClaroRegistroNotaFiscal">
+            <End Role="tblContasClaro" EntitySet="tblContasClaro" />
+            <End Role="tblContasClaroRegistroNotaFiscal" EntitySet="tblContasClaroRegistroNotaFiscal" />
+          </AssociationSet>
+          <EntitySet Name="tblHeadsFebraban" EntityType="FebrabranEntitiesContext.tblHeadsFebraban" />
+          <AssociationSet Name="FK__tblHeadsF__intCo__3BB5CE82" Association="FebrabranEntitiesContext.FK__tblHeadsF__intCo__3BB5CE82">
+            <End Role="tblContasFebraban" EntitySet="tblContasFebraban" />
+            <End Role="tblHeadsFebraban" EntitySet="tblHeadsFebraban" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblContasClaro">
+          <Key>
+            <PropertyRef Name="intContaId" />
+          </Key>
+          <Property Name="intContaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dteInsert" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="txtIdContaUnica" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDataGeracaoArquivo" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtIdentificadorEmpresa" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtCodigoCliente" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNomeCliente" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtEnderecoCliente" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtVencimento" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDataReferenciaInicio" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDataReferenciaFim" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtValor" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtCodigoReferenciaDebitoAutomatico" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblContasClaroLinhaRegistro" Relationship="FebrabranEntitiesContext.FK_tblContasClaroLinhaRegistro" FromRole="tblContasClaro" ToRole="tblContasClaroLinhaRegistro" />
+          <NavigationProperty Name="tblContasClaroRegistroNotaFiscal" Relationship="FebrabranEntitiesContext.FK_tblContasClaroRegistroNotaFiscal" FromRole="tblContasClaro" ToRole="tblContasClaroRegistroNotaFiscal" />
+        </EntityType>
+        <EntityType Name="tblContasClaroLinhaRegistro">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" Nullable="false" />
+          <Property Name="txtDDD" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtTelefone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtSecao" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtData" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtHora" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtOrigemUFDestino" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNumero" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDuracaoQuantidade" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtTarifa" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtValor" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtValorCobrado" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtMatricula" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtSubSecao" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtTipoImposto" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDescricao" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNomeLocalOrigem" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNomeLocalDestino" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtCodigoLocalOrigem" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtCodigoLocalDestino" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblContasClaro" Relationship="FebrabranEntitiesContext.FK_tblContasClaroLinhaRegistro" FromRole="tblContasClaroLinhaRegistro" ToRole="tblContasClaro" />
+        </EntityType>
+        <EntityType Name="tblContasClaroRegistroNotaFiscal">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" Nullable="false" />
+          <Property Name="txtNotaFiscal" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblContasClaro" Relationship="FebrabranEntitiesContext.FK_tblContasClaroRegistroNotaFiscal" FromRole="tblContasClaroRegistroNotaFiscal" ToRole="tblContasClaro" />
+          <Property Name="txtCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtAliquota" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtBaseCalculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtValorImposto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_tblContasClaroLinhaRegistro">
+          <End Type="FebrabranEntitiesContext.tblContasClaro" Role="tblContasClaro" Multiplicity="1" />
+          <End Type="FebrabranEntitiesContext.tblContasClaroLinhaRegistro" Role="tblContasClaroLinhaRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasClaro">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblContasClaroLinhaRegistro">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblContasClaroRegistroNotaFiscal">
+          <End Type="FebrabranEntitiesContext.tblContasClaro" Role="tblContasClaro" Multiplicity="1" />
+          <End Type="FebrabranEntitiesContext.tblContasClaroRegistroNotaFiscal" Role="tblContasClaroRegistroNotaFiscal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasClaro">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblContasClaroRegistroNotaFiscal">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblHeadsFebraban">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intContaId" Type="Int32" />
+          <Property Name="txtControleSequencial" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtIdContaUnica" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtDataGeracaoArquivo" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtIdentificadorEmpresa" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtEmpresaUF" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtCodigoCliente" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtNomeCliente" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtClienteCGC" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtVencimento" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtEmissao" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="txtFiller" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblContasFebraban" Relationship="FebrabranEntitiesContext.FK__tblHeadsF__intCo__3BB5CE82" FromRole="tblHeadsFebraban" ToRole="tblContasFebraban" />
+        </EntityType>
+        <Association Name="FK__tblHeadsF__intCo__3BB5CE82">
+          <End Type="FebrabranEntitiesContext.tblContasFebraban" Role="tblContasFebraban" Multiplicity="0..1" />
+          <End Type="FebrabranEntitiesContext.tblHeadsFebraban" Role="tblHeadsFebraban" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContasFebraban">
+              <PropertyRef Name="intContaId" />
+            </Principal>
+            <Dependent Role="tblHeadsFebraban">
+              <PropertyRef Name="intContaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FebrabranEntitiesContextStoreContainer" CdmEntityContainer="FebrabanContext">
+          <EntitySetMapping Name="tblBilhetacoesFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblBilhetacoesFebraban">
+              <MappingFragment StoreEntitySet="tblBilhetacoesFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtIDUnicoNRC" ColumnName="txtIDUnicoNRC" />
+                <ScalarProperty Name="txtRecursoCNL" ColumnName="txtRecursoCNL" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="txtNumeroTelefone" ColumnName="txtNumeroTelefone" />
+                <ScalarProperty Name="txtCaracteristicaRecurso" ColumnName="txtCaracteristicaRecurso" />
+                <ScalarProperty Name="txtDegrauRecurso" ColumnName="txtDegrauRecurso" />
+                <ScalarProperty Name="txtDataLigacao" ColumnName="txtDataLigacao" />
+                <ScalarProperty Name="txtCNLLocalidadeChamada" ColumnName="txtCNLLocalidadeChamada" />
+                <ScalarProperty Name="txtNomeLocalidadeChamada" ColumnName="txtNomeLocalidadeChamada" />
+                <ScalarProperty Name="txtUFTelefoneChamado" ColumnName="txtUFTelefoneChamado" />
+                <ScalarProperty Name="txtCODNacionalInternacional" ColumnName="txtCODNacionalInternacional" />
+                <ScalarProperty Name="txtCODOperadora" ColumnName="txtCODOperadora" />
+                <ScalarProperty Name="txtDescricaoOperadora" ColumnName="txtDescricaoOperadora" />
+                <ScalarProperty Name="txtCODPais" ColumnName="txtCODPais" />
+                <ScalarProperty Name="txtAreaDDD" ColumnName="txtAreaDDD" />
+                <ScalarProperty Name="txtNumeroTelefoneChamado" ColumnName="txtNumeroTelefoneChamado" />
+                <ScalarProperty Name="txtConjugadoNumeroTelefoneChamado" ColumnName="txtConjugadoNumeroTelefoneChamado" />
+                <ScalarProperty Name="txtDuracaoLigacao" ColumnName="txtDuracaoLigacao" />
+                <ScalarProperty Name="txtCategoria" ColumnName="txtCategoria" />
+                <ScalarProperty Name="txtDescricaoCategoria" ColumnName="txtDescricaoCategoria" />
+                <ScalarProperty Name="txtHorarioLigacao" ColumnName="txtHorarioLigacao" />
+                <ScalarProperty Name="txtTipoChamada" ColumnName="txtTipoChamada" />
+                <ScalarProperty Name="txtGrupoHorarioTarifario" ColumnName="txtGrupoHorarioTarifario" />
+                <ScalarProperty Name="txtDescricaoHorarioTarifario" ColumnName="txtDescricaoHorarioTarifario" />
+                <ScalarProperty Name="txtDegrauLigacao" ColumnName="txtDegrauLigacao" />
+                <ScalarProperty Name="txtSinalValorLigacao" ColumnName="txtSinalValorLigacao" />
+                <ScalarProperty Name="txtAliquotaICMS" ColumnName="txtAliquotaICMS" />
+                <ScalarProperty Name="txtValorLigacaoComImposto" ColumnName="txtValorLigacaoComImposto" />
+                <ScalarProperty Name="txtClasseServico" ColumnName="txtClasseServico" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContasFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblContasFebraban">
+              <MappingFragment StoreEntitySet="tblContasFebraban">
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="dteInsert" ColumnName="dteInsert" />
+                <ScalarProperty Name="dteGeracaoConta" ColumnName="dteGeracaoConta" />
+                <ScalarProperty Name="intTipoOperadora" ColumnName="intTipoOperadora" />
+                <ScalarProperty Name="txtIdContaUnica" ColumnName="txtIdContaUnica" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="intIdContaUnica" ColumnName="intIdContaUnica" />
+                <ScalarProperty Name="intIdEmissao" ColumnName="intIdEmissao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDescontosFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblDescontosFebraban">
+              <MappingFragment StoreEntitySet="tblDescontosFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtIDUnicoNRC" ColumnName="txtIDUnicoNRC" />
+                <ScalarProperty Name="txtRecursoCNL" ColumnName="txtRecursoCNL" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="txtNumeroTelefone" ColumnName="txtNumeroTelefone" />
+                <ScalarProperty Name="txtGrupoCategoria" ColumnName="txtGrupoCategoria" />
+                <ScalarProperty Name="txtDescricaoGrupoCategoria" ColumnName="txtDescricaoGrupoCategoria" />
+                <ScalarProperty Name="txtSinalValorLigacao" ColumnName="txtSinalValorLigacao" />
+                <ScalarProperty Name="txtBaseCalculoDesconto" ColumnName="txtBaseCalculoDesconto" />
+                <ScalarProperty Name="txtPercentualDesconto" ColumnName="txtPercentualDesconto" />
+                <ScalarProperty Name="txtValorLigacao" ColumnName="txtValorLigacao" />
+                <ScalarProperty Name="txtDataInicioAcerto" ColumnName="txtDataInicioAcerto" />
+                <ScalarProperty Name="txtHoraInicioAcerto" ColumnName="txtHoraInicioAcerto" />
+                <ScalarProperty Name="txtDataFimAcerto" ColumnName="txtDataFimAcerto" />
+                <ScalarProperty Name="txtHoraFimAcerto" ColumnName="txtHoraFimAcerto" />
+                <ScalarProperty Name="txtClasseServico" ColumnName="txtClasseServico" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEnderecosFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblEnderecosFebraban">
+              <MappingFragment StoreEntitySet="tblEnderecosFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtIDUnicoNRC" ColumnName="txtIDUnicoNRC" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="txtNumeroTelefone" ColumnName="txtNumeroTelefone" />
+                <ScalarProperty Name="txtCaracteristicaRecurso" ColumnName="txtCaracteristicaRecurso" />
+                <ScalarProperty Name="txtCNLRecursoEnderecoPontaA" ColumnName="txtCNLRecursoEnderecoPontaA" />
+                <ScalarProperty Name="txtNomeLocalidadePontaA" ColumnName="txtNomeLocalidadePontaA" />
+                <ScalarProperty Name="txtUFLocalidadePontaA" ColumnName="txtUFLocalidadePontaA" />
+                <ScalarProperty Name="txtEnderecoPontaA" ColumnName="txtEnderecoPontaA" />
+                <ScalarProperty Name="txtNumeroEnderecoPontaA" ColumnName="txtNumeroEnderecoPontaA" />
+                <ScalarProperty Name="txtComplementoPontaA" ColumnName="txtComplementoPontaA" />
+                <ScalarProperty Name="txtBairroPontaA" ColumnName="txtBairroPontaA" />
+                <ScalarProperty Name="txtCNLRecursoEnderecoPontaB" ColumnName="txtCNLRecursoEnderecoPontaB" />
+                <ScalarProperty Name="txtNomeLocalidadePontaB" ColumnName="txtNomeLocalidadePontaB" />
+                <ScalarProperty Name="txtUFLocalidadePontaB" ColumnName="txtUFLocalidadePontaB" />
+                <ScalarProperty Name="txtEnderecoPontaB" ColumnName="txtEnderecoPontaB" />
+                <ScalarProperty Name="txtNumeroEnderecoPontaB" ColumnName="txtNumeroEnderecoPontaB" />
+                <ScalarProperty Name="txtComplementoPontaB" ColumnName="txtComplementoPontaB" />
+                <ScalarProperty Name="txtBairroPontaB" ColumnName="txtBairroPontaB" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblResumosFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblResumosFebraban">
+              <MappingFragment StoreEntitySet="tblResumosFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtIDUnicoNRC" ColumnName="txtIDUnicoNRC" />
+                <ScalarProperty Name="txtRecursoCNL" ColumnName="txtRecursoCNL" />
+                <ScalarProperty Name="txtLocalidade" ColumnName="txtLocalidade" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="txtNumeroTelefone" ColumnName="txtNumeroTelefone" />
+                <ScalarProperty Name="txtTipoServico" ColumnName="txtTipoServico" />
+                <ScalarProperty Name="txtDescricaoServico" ColumnName="txtDescricaoServico" />
+                <ScalarProperty Name="txtCaracteristicaRecurso" ColumnName="txtCaracteristicaRecurso" />
+                <ScalarProperty Name="txtDegrauRecurso" ColumnName="txtDegrauRecurso" />
+                <ScalarProperty Name="txtVelocidadeRecurso" ColumnName="txtVelocidadeRecurso" />
+                <ScalarProperty Name="txtUnidadeVelocidadeRecurso" ColumnName="txtUnidadeVelocidadeRecurso" />
+                <ScalarProperty Name="txtInicioAssinatura" ColumnName="txtInicioAssinatura" />
+                <ScalarProperty Name="txtFimAssinatura" ColumnName="txtFimAssinatura" />
+                <ScalarProperty Name="txtInicioPeriodoServico" ColumnName="txtInicioPeriodoServico" />
+                <ScalarProperty Name="txtFimPeriodoServico" ColumnName="txtFimPeriodoServico" />
+                <ScalarProperty Name="txtUnidadeConsumo" ColumnName="txtUnidadeConsumo" />
+                <ScalarProperty Name="txtQuantidadeConsumo" ColumnName="txtQuantidadeConsumo" />
+                <ScalarProperty Name="txtSinalValorConsumo" ColumnName="txtSinalValorConsumo" />
+                <ScalarProperty Name="txtValorConsumo" ColumnName="txtValorConsumo" />
+                <ScalarProperty Name="txtSinalAssinatura" ColumnName="txtSinalAssinatura" />
+                <ScalarProperty Name="txtValorAssinatura" ColumnName="txtValorAssinatura" />
+                <ScalarProperty Name="txtAliquota" ColumnName="txtAliquota" />
+                <ScalarProperty Name="txtSinalICMS" ColumnName="txtSinalICMS" />
+                <ScalarProperty Name="txtValorICMS" ColumnName="txtValorICMS" />
+                <ScalarProperty Name="txtSinalTotalOutrosImpostos" ColumnName="txtSinalTotalOutrosImpostos" />
+                <ScalarProperty Name="txtValorTotalImpostos" ColumnName="txtValorTotalImpostos" />
+                <ScalarProperty Name="txtNumeroNotaFiscal" ColumnName="txtNumeroNotaFiscal" />
+                <ScalarProperty Name="txtSinalValorConta" ColumnName="txtSinalValorConta" />
+                <ScalarProperty Name="txtValorConta" ColumnName="txtValorConta" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblServicosFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblServicosFebraban">
+              <MappingFragment StoreEntitySet="tblServicosFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtIDUnicoNRC" ColumnName="txtIDUnicoNRC" />
+                <ScalarProperty Name="txtRecursoCNL" ColumnName="txtRecursoCNL" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="txtNumeroTelefone" ColumnName="txtNumeroTelefone" />
+                <ScalarProperty Name="txtCaracteristicaRecurso" ColumnName="txtCaracteristicaRecurso" />
+                <ScalarProperty Name="txtDataServico" ColumnName="txtDataServico" />
+                <ScalarProperty Name="txtCNLLocalidadeChamada" ColumnName="txtCNLLocalidadeChamada" />
+                <ScalarProperty Name="txtNomeLocalidadeChamada" ColumnName="txtNomeLocalidadeChamada" />
+                <ScalarProperty Name="txtUFTelefoneChamado" ColumnName="txtUFTelefoneChamado" />
+                <ScalarProperty Name="txtCODNacionalInternacional" ColumnName="txtCODNacionalInternacional" />
+                <ScalarProperty Name="txtCODOperadora" ColumnName="txtCODOperadora" />
+                <ScalarProperty Name="txtDescricaoOperadora" ColumnName="txtDescricaoOperadora" />
+                <ScalarProperty Name="txtCODPais" ColumnName="txtCODPais" />
+                <ScalarProperty Name="txtAreaDDD" ColumnName="txtAreaDDD" />
+                <ScalarProperty Name="txtNumeroTelefoneChamado" ColumnName="txtNumeroTelefoneChamado" />
+                <ScalarProperty Name="txtConjugadoNumeroTelefoneChamado" ColumnName="txtConjugadoNumeroTelefoneChamado" />
+                <ScalarProperty Name="txtDuracaoLigacao" ColumnName="txtDuracaoLigacao" />
+                <ScalarProperty Name="txtHorarioLigacao" ColumnName="txtHorarioLigacao" />
+                <ScalarProperty Name="txtGrupoCategoria" ColumnName="txtGrupoCategoria" />
+                <ScalarProperty Name="txtDescricaoGrupoCategoria" ColumnName="txtDescricaoGrupoCategoria" />
+                <ScalarProperty Name="txtCategoria" ColumnName="txtCategoria" />
+                <ScalarProperty Name="txtDescricaoCategoria" ColumnName="txtDescricaoCategoria" />
+                <ScalarProperty Name="txtSinalValorLigacao" ColumnName="txtSinalValorLigacao" />
+                <ScalarProperty Name="txtValorLigacao" ColumnName="txtValorLigacao" />
+                <ScalarProperty Name="txtClasseServico" ColumnName="txtClasseServico" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTotalizadoresFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblTotalizadoresFebraban">
+              <MappingFragment StoreEntitySet="tblTotalizadoresFebraban">
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="txtCodigoCliente" ColumnName="txtCodigoCliente" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtQuantidadeRegistros" ColumnName="txtQuantidadeRegistros" />
+                <ScalarProperty Name="txtQuantidadeLinhas" ColumnName="txtQuantidadeLinhas" />
+                <ScalarProperty Name="txtSinalTotal" ColumnName="txtSinalTotal" />
+                <ScalarProperty Name="txtValorTotal" ColumnName="txtValorTotal" />
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContasClaro">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblContasClaro">
+              <MappingFragment StoreEntitySet="tblContasClaro">
+                <ScalarProperty Name="txtCodigoReferenciaDebitoAutomatico" ColumnName="txtCodigoReferenciaDebitoAutomatico" />
+                <ScalarProperty Name="txtValor" ColumnName="txtValor" />
+                <ScalarProperty Name="txtDataReferenciaFim" ColumnName="txtDataReferenciaFim" />
+                <ScalarProperty Name="txtDataReferenciaInicio" ColumnName="txtDataReferenciaInicio" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtEnderecoCliente" ColumnName="txtEnderecoCliente" />
+                <ScalarProperty Name="txtNomeCliente" ColumnName="txtNomeCliente" />
+                <ScalarProperty Name="txtCodigoCliente" ColumnName="txtCodigoCliente" />
+                <ScalarProperty Name="txtIdentificadorEmpresa" ColumnName="txtIdentificadorEmpresa" />
+                <ScalarProperty Name="txtDataGeracaoArquivo" ColumnName="txtDataGeracaoArquivo" />
+                <ScalarProperty Name="txtIdContaUnica" ColumnName="txtIdContaUnica" />
+                <ScalarProperty Name="dteInsert" ColumnName="dteInsert" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContasClaroLinhaRegistro">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblContasClaroLinhaRegistro">
+              <MappingFragment StoreEntitySet="tblContasClaroLinhaRegistro">
+                <ScalarProperty Name="txtCodigoLocalDestino" ColumnName="txtCodigoLocalDestino" />
+                <ScalarProperty Name="txtCodigoLocalOrigem" ColumnName="txtCodigoLocalOrigem" />
+                <ScalarProperty Name="txtNomeLocalDestino" ColumnName="txtNomeLocalDestino" />
+                <ScalarProperty Name="txtNomeLocalOrigem" ColumnName="txtNomeLocalOrigem" />
+                <ScalarProperty Name="txtDescricao" ColumnName="txtDescricao" />
+                <ScalarProperty Name="txtTipoImposto" ColumnName="txtTipoImposto" />
+                <ScalarProperty Name="txtSubSecao" ColumnName="txtSubSecao" />
+                <ScalarProperty Name="txtMatricula" ColumnName="txtMatricula" />
+                <ScalarProperty Name="txtNome" ColumnName="txtNome" />
+                <ScalarProperty Name="txtValorCobrado" ColumnName="txtValorCobrado" />
+                <ScalarProperty Name="txtValor" ColumnName="txtValor" />
+                <ScalarProperty Name="txtTarifa" ColumnName="txtTarifa" />
+                <ScalarProperty Name="txtDuracaoQuantidade" ColumnName="txtDuracaoQuantidade" />
+                <ScalarProperty Name="txtNumero" ColumnName="txtNumero" />
+                <ScalarProperty Name="txtOrigemUFDestino" ColumnName="txtOrigemUFDestino" />
+                <ScalarProperty Name="txtHora" ColumnName="txtHora" />
+                <ScalarProperty Name="txtData" ColumnName="txtData" />
+                <ScalarProperty Name="txtSecao" ColumnName="txtSecao" />
+                <ScalarProperty Name="txtTelefone" ColumnName="txtTelefone" />
+                <ScalarProperty Name="txtDDD" ColumnName="txtDDD" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="intId" ColumnName="intId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContasClaroRegistroNotaFiscal">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblContasClaroRegistroNotaFiscal">
+              <MappingFragment StoreEntitySet="tblContasClaroRegistroNotaFiscal">
+                <ScalarProperty Name="txtValorImposto" ColumnName="txtValorImposto" />
+                <ScalarProperty Name="txtBaseCalculo" ColumnName="txtBaseCalculo" />
+                <ScalarProperty Name="txtAliquota" ColumnName="txtAliquota" />
+                <ScalarProperty Name="txtTipo" ColumnName="txtTipo" />
+                <ScalarProperty Name="txtCodigo" ColumnName="txtCodigo" />
+                <ScalarProperty Name="txtNotaFiscal" ColumnName="txtNotaFiscal" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="intId" ColumnName="intId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHeadsFebraban">
+            <EntityTypeMapping TypeName="FebrabranEntitiesContext.tblHeadsFebraban">
+              <MappingFragment StoreEntitySet="tblHeadsFebraban">
+                <ScalarProperty Name="txtFiller" ColumnName="txtFiller" />
+                <ScalarProperty Name="txtEmissao" ColumnName="txtEmissao" />
+                <ScalarProperty Name="txtVencimento" ColumnName="txtVencimento" />
+                <ScalarProperty Name="txtClienteCGC" ColumnName="txtClienteCGC" />
+                <ScalarProperty Name="txtNomeCliente" ColumnName="txtNomeCliente" />
+                <ScalarProperty Name="txtCodigoCliente" ColumnName="txtCodigoCliente" />
+                <ScalarProperty Name="txtEmpresaUF" ColumnName="txtEmpresaUF" />
+                <ScalarProperty Name="txtIdentificadorEmpresa" ColumnName="txtIdentificadorEmpresa" />
+                <ScalarProperty Name="txtDataGeracaoArquivo" ColumnName="txtDataGeracaoArquivo" />
+                <ScalarProperty Name="txtIdContaUnica" ColumnName="txtIdContaUnica" />
+                <ScalarProperty Name="txtControleSequencial" ColumnName="txtControleSequencial" />
+                <ScalarProperty Name="intContaId" ColumnName="intContaId" />
+                <ScalarProperty Name="intId" ColumnName="intId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

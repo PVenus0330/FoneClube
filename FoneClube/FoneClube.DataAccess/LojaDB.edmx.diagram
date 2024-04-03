@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db03ef1d33be4bc1bba5fa027b4d3832" Name="Diagram1">
+        <EntityTypeShape EntityType="LojaDB.Address" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="LojaDB.Customer" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LojaDB.GenericAttribute" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="LojaDB.Customer_BillingAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="LojaDB.Customer_ShippingAddress" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LojaDB.CustomerPassword" Width="1.5" PointX="5.25" PointY="4" />
+        <AssociationConnector Association="LojaDB.CustomerPassword_Customer" />
+        <EntityTypeShape EntityType="LojaDB.Customer_CustomerRole_Mapping" Width="1.5" PointX="5.25" PointY="7.5" />
+        <AssociationConnector Association="LojaDB.Customer_CustomerRoles_Source" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

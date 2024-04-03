@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoneClube", "FoneClube.csproj", "{230F9EA9-3ED7-4EB5-AAB0-8DB5D96373EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CieloLib", "..\CieloLib\CieloLib.csproj", "{80F6E157-8828-4F7E-8A2A-956D0BD66E4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{230F9EA9-3ED7-4EB5-AAB0-8DB5D96373EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230F9EA9-3ED7-4EB5-AAB0-8DB5D96373EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230F9EA9-3ED7-4EB5-AAB0-8DB5D96373EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230F9EA9-3ED7-4EB5-AAB0-8DB5D96373EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F6E157-8828-4F7E-8A2A-956D0BD66E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F6E157-8828-4F7E-8A2A-956D0BD66E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F6E157-8828-4F7E-8A2A-956D0BD66E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F6E157-8828-4F7E-8A2A-956D0BD66E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5ED0533-693E-4399-A487-E453D25F5B83}
+	EndGlobalSection
+EndGlobal
